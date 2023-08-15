@@ -1,0 +1,64 @@
+<?php
+
+
+    $conn=mysqli_connect("localhost","root","","devSEED");
+
+
+
+    if(isset($_POST['tuma']))  {
+			
+        $text=mysqli_real_escape_string ($conn,$_POST['jina1'] );
+        $text1=mysqli_real_escape_string ($conn,$_POST['jina2'] );
+        $text2=mysqli_real_escape_string ($conn,$_POST['msimbo'] );
+        mysqli_query($conn,"insert into myList (jina1,jina2,msimbo) values('$text','$text1','text2')");
+         
+
+}
+
+?>
+
+<!DOCTYPE html>
+<HTML>
+<head>
+    <title>
+        moving forward
+    </title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+ <form method="post">
+     <h1>Development Seed</h1>
+     <br>
+     <button type="button" onclick='document.getElementById("sajili01").innerHTML = "<label> First name:</label> <input type=text name=jina1 placeholder=enter_your_first_name...><br><br><label> Last_name:</label><input type=text name=jina2 placeholder=enter_your_last_name...> <br><br><label> Password:</label> <input type=text name=msimbo placeholder=password...> <br><br><button name=tuma>submit</button> <br><br>"'>Create an account</button>
+    <br>
+
+    <p id="sajili01"></p>
+    
+    <h2> <button type="button" onclick='document.getElementById("ingia01").innerHTML = "<label>user name: </label><input  name=jina placeholder= enter_your_name...><br><br><label>Password:</label> <input type=text name=msimbo placeholder=password...><br><br><button id=tuma>submit</button>"'>login into account</button>
+    </h2>
+
+
+    <p id="ingia01"></p>
+    
+
+
+
+    <a href="">privacy Policy</a>
+    <a href="">Teams and condition</a>
+     <br><br><br><br>
+
+
+
+
+      
+  
+   
+  
+
+</form>
+</body>
+</HTML>
